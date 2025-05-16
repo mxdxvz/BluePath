@@ -119,6 +119,9 @@ USE_TZ = True
 import os
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # or wherever your static folder is
+]
 
 
 STATICFILES_DIRS = [

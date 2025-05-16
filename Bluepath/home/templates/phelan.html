@@ -60,7 +60,7 @@
     </ul>
 
     <div class="logout">
-      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="{% url 'homepage' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
   </div>
 
@@ -88,8 +88,9 @@
             <p class="subtext">Located beside Santos Hall and Xavier Hall</p>
 
             <!-- Footer Links -->
-            <div class="directory-footer-links">
-              <a href="#" class="info-link" span class="emoji">️🗺️</span>
+<div class="directory-footer-links">
+<a href="/map/?building=Phelan" class="info-link">
+  <span class="emoji">🗺️</span>
   <span class="text">See on map</span>
 </a>
 
@@ -97,7 +98,6 @@
   <span class="emoji">🔧</span>
   <span class="text">See services and amenities</span>
 </a>
-
 
             </div>
         </div>
@@ -213,20 +213,19 @@
             <span>First Floor/Ground Floor</span>
             <div class="floor-buttons">
             
-<button class="floor-btn" onclick="window.location.href='map?highlight=Phelan%20Hall'">
+<button class="floor-btn" onclick="window.location.href='/map/?building=P111'">
   P111 <i class="fas fa-arrow-right"></i>
 </button>
-
-                <button class="floor-btn" onclick="window.location.href='P111.html'">P112 <i class="fas fa-arrow-right"></i></button>
-                <button class="floor-btn" onclick="window.location.href='P111.html'">P113 <i class="fas fa-arrow-right"></i></button>
+                <button class="floor-btn" onclick="window.location.href='/map/?building=P112'">P112 <i class="fas fa-arrow-right"></i></button>
+                <button class="floor-btn" onclick="window.location.href='/map/?building=P113'">P113 <i class="fas fa-arrow-right"></i></button>
                 <button class="floor-btn" onclick="window.location.href='P111.html'">P114 <i class="fas fa-arrow-right"></i></button>
                 <button class="floor-btn" onclick="window.location.href='P111.html'">P115 <i class="fas fa-arrow-right"></i></button>
                 <button class="floor-btn" onclick="window.location.href='P111.html'">P116 <i class="fas fa-arrow-right"></i></button>
                 <button class="floor-btn" onclick="window.location.href='P111.html'">P117 <i class="fas fa-arrow-right"></i></button>
                 <button class="floor-btn" onclick="window.location.href='P111.html'">P118 <i class="fas fa-arrow-right"></i></button>
                 <button class="floor-btn" onclick="window.location.href='P111.html'">P119 <i class="fas fa-arrow-right"></i></button>
-                <button class="instructional-media-btn" onclick="window.location.href='P111.html'">Instructional Media Center (IMC) <i class="fas fa-arrow-right"></i></button>
-                <button class="check-restrooms-btn" onclick="window.location.href='P111.html'">Check Restrooms <i class="fas fa-arrow-right"></i></button>
+                <button class="instructional-media-btn" onclick="window.location.href='/map/?building=Instructional Media Center'">Instructional Media Center (IMC) <i class="fas fa-arrow-right"></i></button>
+                <button class="check-restrooms-btn" onclick="window.location.href='/map/?building=Phelan Restroom'">Check Restrooms <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
 
@@ -265,14 +264,18 @@
         </div>
     </div>
     <div class="additional-container1">
-        <h3>Feedback & 
-            Reporting System</h3>
-        <p>Help us improve! Report incorrect location details, maintenance issues, or suggest improvements. Please provide specific details to ensure a quick resolution.</p>
-        <div class="feedback-form">
-            <textarea placeholder="Type your feedback here..."></textarea>
-            <button class="submit-feedback-btn">Submit</button>
+    <h3>Feedback & Reporting System</h3>
+    <p>
+        Help us improve! Report incorrect location details, maintenance issues, or suggest improvements.
+        Please provide specific details to ensure a quick resolution.
+    </p>
+    <div class="feedback-form">
+        <textarea id="feedback-text" placeholder="Type your feedback here..."></textarea>
+        <button class="submit-feedback-btn" onclick="submitFeedback()">Submit</button>
     </div>
 </div>
+</div>
+
 
 
     
@@ -282,6 +285,25 @@
         </div>
     </div>
     </div>    
+
+    
+<script>
+  function submitFeedback() {
+    const feedback = document.getElementById("feedback-text").value.trim();
+    
+    if (feedback === "") {
+      alert("Please enter your feedback before submitting.");
+      return;
+    }
+
+    // You can also send the feedback to the server here using fetch()
+
+    alert("Thank you for your feedback!");
+    
+    // Optional: clear the textarea
+    document.getElementById("feedback-text").value = "";
+  }
+</script>
 
     <script>
         function toggleSave(icon) {

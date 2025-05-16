@@ -23,7 +23,7 @@
       <span class="logo">BluePath<span class="dot">.</span></span>
     </div>
     <div class="nav-right">
-      <a href="{% url 'homepage' %}">Home</a>
+      <a href="{% url 'after_login' %}">Home</a>
       <a href="#" class="active">Features</a>
       <a href="{% url 'map' %}">Explore</a>
       <a href="{% url 'directory' %}">Directory</a>
@@ -62,7 +62,7 @@
     </ul>
 
     <div class="logout">
-      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="{% url 'homepage' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
   </div>
 

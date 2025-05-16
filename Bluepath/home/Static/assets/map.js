@@ -30,10 +30,36 @@ const buildings = {
       room: "BH-202",
       facilities: "University Health Services Center, Center for Community Development, CBA Dean’s Office, CBA Chairpersons’ Office"
     },
+
     "Phelan Hall": {
       coords: [13.630060, 123.183930],
-      room: "PH-101",
+      room: "P111 - P119, P211 -P219, P311 - P319",
       facilities: "CCS Dean’s Office, CS Chairpersons’ Office, Chem Lab, Physics Lab, Instructional Media Center"
+    },
+    "Instructional Media Center": {
+      coords: [13.630060, 123.183930],
+      room: "",
+      facilities: "Phelan Hall"
+    },
+    "Phelan Restroom": {
+      coords: [13.630060, 123.183930],
+      room: "",
+      facilities: "First Floor"
+    },
+    "P111": {
+      coords: [13.630060, 123.183930],
+      room: "",
+      facilities: "Phelan Hall"
+    },
+    "P112": {
+      coords: [13.630060, 123.183930],
+      room: "",
+      facilities: "Phelan Hall"
+    },
+    "P113": {
+      coords: [13.630060, 123.183930],
+      room: "",
+      facilities: "Phelan Hall"
     },
     "Alingal Hall": {
       coords: [13.63175316232863, 123.1842917334199],
@@ -196,7 +222,7 @@ const buildings = {
       facilities: "P219 DCS Office"
     },
     "Santos Bldg.": {
-      coords: [13.630060, 123.183930],
+      coords: [13.630141690512724, 123.18462775334835],
       room: "S218, s218, MIS, mis, Management Information System, management information system",
       facilities: "S218 MIS Office"
     },
@@ -228,6 +254,7 @@ const buildings = {
       facilities: "Parking near Phelan Hall"
     },
 };
+
 
 
 fetch('sidewalks.geojson')
@@ -423,6 +450,7 @@ if (destinationQuery === "parking") {
 
 
 
+
   // Proceed with routing
   currentLocation = startBuilding; 
   updateSidebar(destinationBuilding);
@@ -495,4 +523,93 @@ if (destinationQuery === "parking") {
     }
   }).addTo(map);
 }
+
+// Helper function to get query param from URL
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+// On page load, check if location param is 'phelan'
+const buildingParam = getQueryParam('building');
+if (buildingParam && buildingParam.toLowerCase() === 'phelan') {
+  const phelan = buildings["Phelan Hall"];
+  if (phelan) {
+    map.setView(phelan.coords, 20); // Adjust zoom as needed
+    L.marker(phelan.coords)
+      .addTo(map)
+      .bindPopup(`<strong>Phelan Hall</strong><br>${phelan.facilities}`)
+      .openPopup();
+  }
+}
+
+if (buildingParam && buildingParam.toLowerCase() === 'santos') {
+  const santos = buildings["Santos Hall"];
+  if (santos) {
+    map.setView(santos.coords, 20);
+    L.marker(santos.coords)
+      .addTo(map)
+      .bindPopup(`<strong>Santos Hall</strong><br>${santos.facilities}`)
+      .openPopup();
+  }
+}
+
+if (buildingParam && buildingParam.toLowerCase() === 'p111') {
+  const P111 = buildings["P111"];
+  if (P111) {
+    map.setView(P111.coords, 20);
+    L.marker(P111.coords)
+      .addTo(map)
+      .bindPopup(`<strong>P111 First Floor</strong><br>${P111.facilities}`)
+      .openPopup();
+  }
+}
+
+if (buildingParam && buildingParam.toLowerCase() === 'p112') {
+  const P112 = buildings["P112"];
+  if (P112) {
+    map.setView(P112.coords, 20);
+    L.marker(P112.coords)
+      .addTo(map)
+      .bindPopup(`<strong>P112 First Floor</strong><br>${P112.facilities}`)
+      .openPopup();
+  }
+}
+
+if (buildingParam && buildingParam.toLowerCase() === 'p113') {
+  const P113 = buildings["P113"];
+  if (P113) {
+    map.setView(P113.coords, 20);
+    L.marker(P113.coords)
+      .addTo(map)
+      .bindPopup(`<strong>P113 First Floor</strong><br>${P113.facilities}`)
+      .openPopup();
+  }
+}
+
+if (buildingParam && buildingParam.toLowerCase() === 'instructional media center') {
+  const instructional_media_center = buildings["Instructional Media Center"];
+  if (instructional_media_center) {
+    map.setView(instructional_media_center.coords, 20);
+    L.marker(instructional_media_center.coords)
+      .addTo(map)
+      .bindPopup(`<strong>🖥️ Instructional Media Center</strong><br>${instructional_media_center.facilities}`)
+      .openPopup();
+  }
+}
+
+if (buildingParam && buildingParam.toLowerCase() === 'phelan restroom') {
+  const restroom = buildings["Phelan Restroom"];
+  if (restroom) {
+    map.setView(restroom.coords, 20);
+    L.marker(restroom.coords)
+      .addTo(map)
+      .bindPopup(`<strong>🚽 Phelan Restroom</strong><br>${restroom.facilities}`)
+      .openPopup();
+  }
+}
+
+
+
+
 

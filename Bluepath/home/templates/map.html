@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BluePath</title>
+  <title>Explore | BluePath</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -25,7 +25,7 @@
       <span class="logo">BluePath<span class="dot">.</span></span>
     </div>
     <div class="nav-right">
-      <a href="{% url 'homepage' %}">Home</a>
+      <a href="{% url 'after_login' %}">Home</a>
       <a href="{% url 'features' %}">Features</a>
       <a href="{% url 'map' %}" class="active">Explore</a>
       <a href="{% url 'directory' %}">Directory</a>
@@ -64,7 +64,7 @@
     </ul>
 
     <div class="logout">
-      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="{% url 'homepage' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
   </div>
 
@@ -169,15 +169,16 @@ function handleNavSearch(event) {
   </script>
 
        <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('overlay').classList.toggle('show');
-    }
+   function toggleSidebar() {
+  document.getElementById('nsidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
 
-    function closeSidebar() {
-      document.getElementById('sidebar').classList.remove('open');
-      document.getElementById('overlay').classList.remove('show');
-    }
+function closeSidebar() {
+  document.getElementById('nsidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+
   </script>
 </body>
 </html>

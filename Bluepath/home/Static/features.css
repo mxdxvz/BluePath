@@ -97,11 +97,12 @@ body {
   padding: 1.5rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(6px); /* optional for frosted-glass look */
+  transition: transform 0.3s ease;
 }
 
 
 .feature-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-100px);
 }
 
 .feature-icon {

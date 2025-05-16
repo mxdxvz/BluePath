@@ -231,11 +231,13 @@ hr.blue-thin {
   }
 
   button.material-symbols-outlined {
+    align-items: center;
   background: transparent;
   color: white;
   border: none;
   cursor: pointer;
   font-size: 16px; /* adjust as needed */
+  width: 100px;
 }
 
 
@@ -244,6 +246,8 @@ hr.blue-thin {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 500px;
+    
   }
 
   .buttons button {
@@ -252,6 +256,7 @@ hr.blue-thin {
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    
   }
 
   .buttons .report {

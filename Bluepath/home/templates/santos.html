@@ -60,7 +60,7 @@
     </ul>
 
     <div class="logout">
-      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a href="{% url 'homepage' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
   </div>
 
@@ -89,7 +89,7 @@
 
             <!-- Footer Links -->
             <div class="directory-footer-links">
-              <a href="#" class="info-link" span class="emoji">️🗺️</span>
+              <a href="/map/?building=Santos" class="info-link" span class="emoji">️🗺️</span>
   <span class="text">See on map</span>
 </a>
 
@@ -252,14 +252,17 @@
             </div>
         </div>
     </div>
-    <div class="additional-container1">
-        <h3>Feedback & 
-            Reporting System</h3>
-        <p>Help us improve! Report incorrect location details, maintenance issues, or suggest improvements. Please provide specific details to ensure a quick resolution.</p>
-        <div class="feedback-form">
-            <textarea placeholder="Type your feedback here..."></textarea>
-            <button class="submit-feedback-btn">Submit</button>
+        <div class="additional-container1">
+    <h3>Feedback & Reporting System</h3>
+    <p>
+        Help us improve! Report incorrect location details, maintenance issues, or suggest improvements.
+        Please provide specific details to ensure a quick resolution.
+    </p>
+    <div class="feedback-form">
+        <textarea id="feedback-text" placeholder="Type your feedback here..."></textarea>
+        <button class="submit-feedback-btn" onclick="submitFeedback()">Submit</button>
     </div>
+</div>
 </div>
 
 <!-- Services & Amenities Popup -->
@@ -290,6 +293,24 @@
         </div>
     </div>
     </div>    
+
+    <script>
+  function submitFeedback() {
+    const feedback = document.getElementById("feedback-text").value.trim();
+    
+    if (feedback === "") {
+      alert("Please enter your feedback before submitting.");
+      return;
+    }
+
+    // You can also send the feedback to the server here using fetch()
+
+    alert("Thank you for your feedback!");
+    
+    // Optional: clear the textarea
+    document.getElementById("feedback-text").value = "";
+  }
+</script>
 
     <script>
         function toggleSave(icon) {

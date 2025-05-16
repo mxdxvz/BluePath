@@ -41,3 +41,8 @@ def phelan_view(request):
 def santos_view(request):
     return render(request, 'santos.html')
 
+def after_login_view(request):
+    return render(request, 'after_login.html')
+
+
+

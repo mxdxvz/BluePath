@@ -245,7 +245,7 @@ body {
     left: -25px;   /* Distance from the left side of the container */
     background-color: rgba(63, 63, 63, 0);  /* Optional background */
     padding: 20px;  /* Adjust padding for better content spacing */
-    width: 500px;  /* Set a width if necessary */
+    width: 490px;  /* Set a width if necessary */
     height: 400px;  /* Adjust the height as needed */
     border-radius: 8px;
     color: white;
@@ -256,7 +256,7 @@ body {
     position: absolute;
     top: -10px;  /* Distance from the top of the container */
     right: 325px;
-    width: 460px;  /* Set a width if necessary */
+    width: 450px;  /* Set a width if necessary */
     height: 700px;
     flex: 1;  /* Makes this container take equal width */
     height: auto;  /* Adjusts height based on content */
