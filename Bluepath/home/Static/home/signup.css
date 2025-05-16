@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #004e92, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .black-container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+  
+  .card {
+    display: flex;
+    width: 900px;
+    height: 570px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .login-title h2 {
+    color: #004e92;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  
+  .login-title p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .login-title a {
+    color: #004e92;
+    text-decoration: none;
+  }
+  
+  .input-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .input-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #064378;
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .circle:hover {
+    background-color: #004e92;
+  }
+  
+  .arrow {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .form-step {
+    width: 100%;
+  }
+  
+  .form-step .input-group input {
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .login-btn {
+    width: 100%;
+    background-color: #064378;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .login-btn:hover {
+    background-color: #004e92;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin: 20px 0;
+  }
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
+  
+.google-btn {
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px 16px;
+    border: 1.5px solid #e74c3c;
+    border-radius: 999px;
+    color: #e74c3c;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+  
+.google-btn:hover {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.google-btn:hover img {
+    filter: brightness(0) invert(1);
+}
+  
+  .remember-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .remember-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #004e92;
+  }
+  
+
+  #step2 .input-group:last-of-type {
+    margin-bottom: 5px;
+  }
+  
+  .right-content {
+    flex: 1.2;
+    background: url("../images/adnu.png") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px;
+    color: white;
+  }
+  
+  .right-inner {
+    color: white;
+    max-width: 300px;
+  }
+  
+  .right-inner h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .right-inner p {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .right-content {
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .right-inner h1 {
+      font-size: 28px;
+    }
+  
+    .right-inner p {
+      font-size: 16px;
+    }
+  }

@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features | BluePath</title>
+  <link rel="stylesheet" href="{% static 'features.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+  <button class="profile-button" onclick="toggleSidebar()">
+    <img src="{% static 'assets/profile.png' %}" alt="Profile" class="avatar">
+    <span class="username">airjordanx</span>
+  </button>
+</div>
+
+    <div class="nav-center">
+      <span class="logo">BluePath<span class="dot">.</span></span>
+    </div>
+    <div class="nav-right">
+      <a href="{% url 'homepage' %}">Home</a>
+      <a href="#" class="active">Features</a>
+      <a href="{% url 'map' %}">Explore</a>
+      <a href="{% url 'directory' %}">Directory</a>
+      <a href="{% url 'help' %}">Help & FAQs</a>
+      <i class="fas fa-search fa-lg search-icon" onclick="toggleSearchInput()"></i>
+
+        <!-- Search Input (Initially hidden) -->
+        <div class="search-input-container" style="display: none;">
+            <input type="text" id="navSearch" placeholder="Search..." onkeydown="handleNavSearch(event)" />
+        </div>
+    </div>
+  </nav>
+
+   <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo">BluePath.</h2>
+      <div class="profile">
+        <img src="{% static 'assets/profile.png' %}" alt="Profile" class="profile-pic">
+        <div class="profile-info">
+          <p class="name">Michael Jordan</p>
+          <p class="username">@airjordanx</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+    
+    <ul class="nav-links">
+      <li><a href="{% url 'homepage' %}"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="{% url 'map' %}"><i class="fas fa-compass"></i> Explore</a></li>
+      <li><a href="{% url 'directory' %}"><i class="fas fa-list"></i> Search & Directory</a></li>
+      <li><a href="{% url 'notification' %}"><i class="fas fa-bell"></i> Notifications</a></li>
+      <li><a href="{% url 'saved' %}"><i class="fas fa-bookmark"></i> Saved Buildings</a></li>
+      <li><a href="{% url 'feedback' %}"><i class="fas fa-flag"></i> Feedback & Reporting</a></li>
+      <li><a href="{% url 'settings' %}"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul>
+
+    <div class="logout">
+      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+  
+
+  <header class="features-header">
+    <h1>Why Choose <span class="highlight">BluePath</span>?</h1>
+    <p>Powerful tools built for seamless navigation, community feedback, and smart accessibility planning.</p>
+  </header>
+
+  <main class="features-container">
+
+<div class="feature-card">
+  <i class="fas fa-map-marked-alt feature-icon"></i>
+  <h2>Interactive Campus Map</h2>
+  <p>Navigate a digital 2D map of ADNU's campus that helps you easily find buildings, rooms, and offices at a glance.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-route feature-icon"></i>
+  <h2>Real-Time Navigation</h2>
+  <p>Get efficient, step-by-step directions with smart route optimization—accessible on both desktop and mobile devices.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-compass feature-icon"></i>
+  <h2>Manual Location Input</h2>
+  <p>Input your current location manually to receive reliable route guidance, even without GPS access.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-user-friends feature-icon"></i>
+  <h2>Crowd Density Tracker</h2>
+  <p>Know which areas are crowded in real time through community reports—helping you avoid congestion.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-search feature-icon"></i>
+  <h2>Search & Facility Finder</h2>
+  <p>Quickly search for classrooms, offices, or services by entering a building name and room number.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-calendar-alt feature-icon"></i>
+  <h2>Event & Notification System</h2>
+  <p>Stay informed with alerts about school events, club meetings, and campus activities—right when they happen.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-exclamation-triangle feature-icon"></i>
+  <h2>Emergency Assistance Info</h2>
+  <p>Access emergency contacts, first-aid locations, and campus exits quickly when it matters most.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-flag feature-icon"></i>
+  <h2>Feedback & Reporting</h2>
+  <p>Report broken facilities, outdated info, or blocked areas to keep the campus data accurate and helpful for everyone.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-universal-access feature-icon"></i>
+  <h2>Accessibility Highlights</h2>
+  <p>See important accessibility details like ramps, elevators, restrooms, bike racks, and water stations at a glance.</p>
+</div>
+
+<div class="feature-card">
+  <i class="fas fa-video feature-icon"></i>
+  <h2>Virtual Tour for Freshmen</h2>
+  <p>Explore the campus online through an interactive walkthrough, perfect for new students before their first day.</p>
+</div>
+
+     <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+    }
+  </script>
+
+  </main>
+
+</body>
+</html>

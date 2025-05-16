@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help & FAQs | BluePath</title>
+  <link rel="stylesheet" href="{% static 'help.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+  <button class="profile-button" onclick="toggleSidebar()">
+    <img src="{% static 'assets/profile.png' %}" alt="Profile" class="avatar">
+    <span class="username">airjordanx</span>
+  </button>
+</div>
+    <div class="nav-center">
+      <span class="logo">BluePath<span class="dot">.</span></span>
+    </div>
+    <div class="nav-right">
+      <a href="{% url 'homepage' %}">Home</a>
+      <a href="{% url 'features' %}">Features</a>
+      <a href="{% url 'map' %}">Explore</a>
+      <a href="{% url 'directory' %}">Directory</a>
+      <a href="{% url 'help' %}" class="active">Help & FAQs</a>
+      <i class="fas fa-search fa-lg search-icon" onclick="toggleSearchInput()"></i>
+
+        <!-- Search Input (Initially hidden) -->
+        <div class="search-input-container" style="display: none;">
+            <input type="text" id="navSearch" placeholder="Search..." onkeydown="handleNavSearch(event)" />
+        </div>
+    </div>
+  </nav>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo">BluePath.</h2>
+      <div class="profile">
+        <img src="{% static 'assets/profile.png' %}" alt="Profile" class="profile-pic">
+        <div class="profile-info">
+          <p class="name">Michael Jordan</p>
+          <p class="username">@airjordanx</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+    
+    <ul class="nav-links">
+      <li><a href="{% url 'homepage' %}"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="{% url 'map' %}"><i class="fas fa-compass"></i> Explore</a></li>
+      <li><a href="{% url 'directory' %}"><i class="fas fa-list"></i> Search & Directory</a></li>
+      <li><a href="{% url 'notification' %}"><i class="fas fa-bell"></i> Notifications</a></li>
+      <li><a href="{% url 'saved' %}"><i class="fas fa-bookmark"></i> Saved Buildings</a></li>
+      <li><a href="{% url 'feedback' %}"><i class="fas fa-flag"></i> Feedback & Reporting</a></li>
+      <li><a href="{% url 'settings' %}"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul>
+
+    <div class="logout">
+      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+  <!-- Help & FAQ Section -->
+  <div class="container">
+    <div class="faq-header">
+      <h1>Help & FAQs</h1>
+      <p>Everything you need to know about using BluePath</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What is BluePath?</div>
+      <div class="faq-answer">BluePath is an interactive campus navigation and information platform that helps you explore locations like Xavier Hall, Burns Hall, or any room like P217 with ease.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I search for a room?</div>
+      <div class="faq-answer">Use the search bar in the Explore page. Enter the name of the location (e.g., "Arrupe Hall") or room number (e.g., "P217") and BluePath will zoom in and guide you.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I get directions from my location?</div>
+      <div class="faq-answer">Yes, type your current location and your destination in the search bar, and it will generate a path and highlight it on the map.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is BluePath available offline?</div>
+      <div class="faq-answer">Currently, BluePath requires an internet connection to provide live map and navigation features.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I report incorrect location info?</div>
+      <div class="faq-answer">You can report any map issues through the "Report" button in the sidebar of the Explore page or send feedback via the contact form.</div>
+    </div>
+
+     <div class="faq-item">
+      <div class="faq-question">How do I reset my password?</div>
+      <div class="faq-answer">Go to your profile settings, click "Change Password", and follow the instructions.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I contact support?</div>
+      <div class="faq-answer">Email us at <a href="mailto:support@bluepath.com">support@bluepath.com</a> or use the live chat.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I delete my account?</div>
+      <div class="faq-answer">Go to Account Settings &gt; Delete Account. This action is permanent.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Why can’t I upload files?</div>
+      <div class="faq-answer">Ensure your file is under 10MB and in a supported format (PDF, DOCX, PNG, JPG).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is my data secure?</div>
+      <div class="faq-answer">Yes, we encrypt all user data and comply with strict privacy standards.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I use BluePath on mobile?</div>
+      <div class="faq-answer">Yes, our app is mobile-friendly and works well on Android and iOS.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Where can I report a bug?</div>
+      <div class="faq-answer">Use the "Report an Issue" link at the bottom of the Help page.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I report incorrect location info?</div>
+      <div class="faq-answer">Click the "Report" button on the Explore page sidebar or send us feedback through the contact form.</div>
+    </div>
+  </div>
+
+       <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+    }
+    function toggleSearchInput() {
+    const searchInputContainer = document.querySelector('.search-input-container');
+    
+    // Toggle visibility of the search input
+    if (searchInputContainer.style.display === 'none' || searchInputContainer.style.display === '') {
+        searchInputContainer.style.display = 'block';
+    } else {
+        searchInputContainer.style.display = 'none';
+    }
+}
+
+function handleNavSearch(event) {
+    if (event.key === 'Enter') {
+        const query = event.target.value.toLowerCase().trim();
+
+        // Routes for predefined sections
+        const routes = {
+            "home": "{% url 'homepage' %}",
+            "directory": "#",  // Replace with correct URL when added
+            "explore": "{% url 'map' %}",
+            "features": "#",  // Replace with correct URL if available
+            "help": "#",  // Replace with correct URL if available
+            "faqs": "#"   // Replace with correct URL if available
+        };
+
+        // Check if the search matches any predefined route
+        if (routes[query]) {
+            window.location.href = routes[query];
+        } else {
+            // If it's not a predefined route, assume it's a location search
+            window.location.href = `/search/?q=${encodeURIComponent(query)}`;
+        }
+    }
+}
+  </script>
+
+</body>
+</html>
