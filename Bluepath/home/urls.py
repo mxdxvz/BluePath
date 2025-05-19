@@ -16,4 +16,5 @@ urlpatterns = [
     path('settings/', views.settings_view, name='settings'),
     path('phelan/', views.phelan_view, name='phelan'),
     path('santos/', views.santos_view, name='santos'),
+    path('tour/', views.tour_view, name='tour'),
 ]
