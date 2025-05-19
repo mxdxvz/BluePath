@@ -1,0 +1,126 @@
+Folder PATH listing for volume Acer
+Volume serial number is 8068-ECAD
+C:.
+¦   db.sqlite3
+¦   manage.py
+¦   structure.txt
+¦   
++---.vscode
+¦       launch.json
+¦       
++---Bluepath
+¦   ¦   asgi.py
+¦   ¦   settings.py
+¦   ¦   urls.py
+¦   ¦   wsgi.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           settings.cpython-312.pyc
+¦           settings.cpython-313.pyc
+¦           urls.cpython-312.pyc
+¦           urls.cpython-313.pyc
+¦           wsgi.cpython-312.pyc
+¦           wsgi.cpython-313.pyc
+¦           __init__.cpython-312.pyc
+¦           __init__.cpython-313.pyc
+¦           
++---home
+    ¦   admin.py
+    ¦   apps.py
+    ¦   manage.py
+    ¦   models.py
+    ¦   tests.py
+    ¦   urls.py
+    ¦   views.py
+    ¦   __init__.py
+    ¦   
+    +---migrations
+    ¦   ¦   __init__.py
+    ¦   ¦   
+    ¦   +---__pycache__
+    ¦           __init__.cpython-312.pyc
+    ¦           __init__.cpython-313.pyc
+    ¦           
+    +---Static
+    ¦   ¦   directory.css
+    ¦   ¦   features.css
+    ¦   ¦   help.css
+    ¦   ¦   map.css
+    ¦   ¦   phelan.css
+    ¦   ¦   santos.css
+    ¦   ¦   signup.css
+    ¦   ¦   
+    ¦   +---assets
+    ¦   ¦       arrupe.jpg
+    ¦   ¦       burns.jpg
+    ¦   ¦       burns.png
+    ¦   ¦       image 2.png
+    ¦   ¦       library.jpg
+    ¦   ¦       map.jpg
+    ¦   ¦       map.js
+    ¦   ¦       map.webp
+    ¦   ¦       original-71435108b137f4a28cdabb63de27c35f.webp
+    ¦   ¦       phelan.png
+    ¦   ¦       profile.jpg
+    ¦   ¦       profile.png
+    ¦   ¦       santos.png
+    ¦   ¦       search_icon.png
+    ¦   ¦       
+    ¦   +---home
+    ¦   ¦       after_login.css
+    ¦   ¦       login.css
+    ¦   ¦       style.css
+    ¦   ¦       
+    ¦   +---images
+    ¦   ¦       adnu.png
+    ¦   ¦       Bangs2.png
+    ¦   ¦       bg1.png
+    ¦   ¦       bg2.png
+    ¦   ¦       Boy.png
+    ¦   ¦       Girl.png
+    ¦   ¦       Girl1.png
+    ¦   ¦       google.png
+    ¦   ¦       half.png
+    ¦   ¦       tombits2.png
+    ¦   ¦       
+    ¦   +---settings
+    ¦   ¦       globals.css
+    ¦   ¦       style.css
+    ¦   ¦       
+    ¦   +---sidebar
+    ¦           feedback.css
+    ¦           notification.css
+    ¦           saved.css
+    ¦           settings.css
+    ¦           
+    +---templates
+    ¦       after_login.html
+    ¦       directory.html
+    ¦       features.html
+    ¦       feedback.html
+    ¦       help.html
+    ¦       index.html
+    ¦       login.html
+    ¦       map.html
+    ¦       notification.html
+    ¦       phelan.html
+    ¦       santos.html
+    ¦       saved.html
+    ¦       settings.html
+    ¦       signup.html
+    ¦       
+    +---__pycache__
+            admin.cpython-312.pyc
+            admin.cpython-313.pyc
+            apps.cpython-312.pyc
+            apps.cpython-313.pyc
+            models.cpython-312.pyc
+            models.cpython-313.pyc
+            urls.cpython-312.pyc
+            urls.cpython-313.pyc
+            views.cpython-312.pyc
+            views.cpython-313.pyc
+            __init__.cpython-312.pyc
+            __init__.cpython-313.pyc
+            
