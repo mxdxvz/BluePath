@@ -44,5 +44,5 @@ def santos_view(request):
 def after_login_view(request):
     return render(request, 'after_login.html')
 
-
-
+def tour_view(request):
+    return render(request, 'tour.html')
