@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saved Buildings | BluePath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'sidebar/saved.css' %}" />
+</head>
+<body>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo">BluePath<span class="dot">.</span></h2>
+      <div class="profile">
+        <img src="{% static 'assets/profile.png' %}" alt="Profile" class="profile-pic">
+        <div class="profile-info">
+          <p class="name">Michael Jordan</p>
+          <p class="username">@airjordanx</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <ul class="nav-links">
+      <li><a href="{% url 'after_login' %}"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="{% url 'map' %}"><i class="fas fa-compass"></i> Explore</a></li>
+      <li><a href="{% url 'directory' %}"><i class="fas fa-list"></i> Search & Directory</a></li>
+      <li><a href="{% url 'notification' %}"><i class="fas fa-bell"></i> Notifications</a></li>
+      <li><a href="{% url 'saved' %}"><i class="fas fa-bookmark"></i> Saved Buildings</a></li>
+      <li><a href="{% url 'feedback' %}"><i class="fas fa-flag"></i> Feedback & Reporting</a></li>
+      <li><a href="{% url 'settings' %}"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul>
+
+    <div class="logout">
+      <a href="{% url 'homepage' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+  
+  <div class="saved-container">
+    <h1>Saved Buildings</h1>
+    <div class="building-grid">
+
+      <div class="building-card">
+        <div class="saved-icon"><i class="fas fa-bookmark"></i></div>
+        <img src="{% static 'assets/phelan.jpg' %}" alt="Phelan Hall">
+        <div class="building-info">
+          <h2>Phelan Hall</h2>
+          <p>Located beside Santos Hall and Xavier Hall</p>
+          <a href="{% url 'phelan' %}" class="see-more">Open details ></a>
+        </div>
+      </div>
+
+      <div class="building-card">
+        <div class="saved-icon"><i class="fas fa-bookmark"></i></div>
+        <img src="{% static 'assets/arrupe.jpg' %}" alt="Arrupe Building">
+        <div class="building-info">
+          <h2>Arrupe Hall</h2>
+          <p>At the back of J. O'Brien, SJ Library, 4 Floors</p>
+          <a href="#" class="see-more">Open details ></a>
+        </div>
+      </div>
+
+      <div class="building-card">
+        <div class="saved-icon"><i class="fas fa-bookmark"></i></div>
+        <img src="{% static 'assets/library.jpg' %}" alt="J. O'Brien, SJ Library">
+        <div class="building-info">
+          <h2>J. O'Brien, SJ Library</h2>
+          <p>At the left side of Bonoan Building, 3 Floors</p>
+          <a href="#" class="see-more">Open details ></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

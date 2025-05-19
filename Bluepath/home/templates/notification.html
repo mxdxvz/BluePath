@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notifications | BluePath</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'sidebar/notification.css' %}" />
+</head>
+<body>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo">BluePath<span class="dot">.</span></h2>
+      <div class="profile">
+        <img src="{% static 'assets/profile.png' %}" alt="Profile" class="profile-pic">
+        <div class="profile-info">
+          <p class="name">Michael Jordan</p>
+          <p class="username">@airjordanx</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <ul class="nav-links">
+      <li><a href="{% url 'after_login' %}"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="{% url 'map' %}"><i class="fas fa-compass"></i> Explore</a></li>
+      <li><a href="{% url 'directory' %}"><i class="fas fa-list"></i> Search & Directory</a></li>
+      <li><a href="{% url 'notification' %}"><i class="fas fa-bell"></i> Notifications</a></li>
+      <li><a href="{% url 'saved' %}"><i class="fas fa-bookmark"></i> Saved Buildings</a></li>
+      <li><a href="{% url 'feedback' %}"><i class="fas fa-flag"></i> Feedback & Reporting</a></li>
+      <li><a href="{% url 'settings' %}"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul>
+
+    <div class="logout">
+      <a href="{% url 'homepage' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h1>Notifications</h1>
+    </header>
+
+    <main>
+      <section class="notifications-list">
+
+<article class="notification unread">
+  <i class="fas fa-wifi icon warning"></i>
+  <div class="notification-content">
+    <h2>No Free Wi-Fi at the Library</h2>
+    <p>The library's Wi-Fi is currently limited to authorized users only due to network upgrades. Please use other campus Wi-Fi spots.</p>
+    <time datetime="2025-05-15T13:00">Today, 1:00 PM</time>
+  </div>
+</article>
+
+<article class="notification unread">
+  <i class="fas fa-users icon warning"></i>
+  <div class="notification-content">
+    <h2>Moderately Crowded Library</h2>
+    <p>The <strong>J. O'Brien, SJ Library</strong> is experiencing moderate crowd levels. Seating availability might be limited.</p>
+    <time datetime="2025-05-15T11:45">Today, 11:45 AM</time>
+  </div>
+</article>
+
+<article class="notification">
+  <i class="fas fa-tint icon info"></i>
+  <div class="notification-content">
+    <h2>Water Station Maintenance</h2>
+    <p>The water station near Building C is temporarily closed for maintenance. Use stations near Buildings A and D.</p>
+    <time datetime="2025-05-15T10:30">Today, 10:30 AM</time>
+  </div>
+</article>
+
+<article class="notification unread">
+  <i class="fas fa-parking icon info"></i>
+  <div class="notification-content">
+    <h2>No Available Parking</h2>
+    <p>The main parking lot near <strong>Belardo Hall</strong> is currently full. Please consider alternative parking areas.</p>
+    <time datetime="2025-05-15T08:30">Today, 8:30 AM</time>
+  </div>
+</article>
+
+<article class="notification">
+  <i class="fas fa-tools icon success"></i>
+  <div class="notification-content">
+    <h2>Pathway Maintenance</h2>
+    <p>The footpath between <strong>Dolan Building</strong> and <strong>Adriatico Building</strong> is closed today for maintenance. Please use alternate routes.</p>
+    <time datetime="2025-05-14T07:00">Yesterday, 7:00 AM</time>
+  </div>
+</article>
+
+<article class="notification">
+  <i class="fas fa-calendar-alt icon info"></i>
+  <div class="notification-content">
+    <h2>Event Reminder</h2>
+    <p>Don't forget the career fair tomorrow at the covered court starting 10 AM.</p>
+    <time datetime="2025-05-13T19:00">May 13, 7:00 PM</time>
+  </div>
+</article>
+
+<article class="notification">
+  <i class="fas fa-map-marker-alt icon warning"></i>
+  <div class="notification-content">
+    <h2>Building Closure</h2>
+    <p>The <strong>Instructional Media Center</strong> will be closed from 3 PM for special events.</p>
+    <time datetime="2025-05-13T14:00">May 13, 2:00 PM</time>
+  </div>
+</article>
+
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
